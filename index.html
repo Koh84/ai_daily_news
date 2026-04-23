@@ -23,7 +23,7 @@ title: Home
           {% endif %}
           
           <div class="article-content">
-            <h2><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h2>
+            <h2><a href="{{ site.baseurl }}{{ article.url }}">{{ article.title }}</a></h2>
             <p class="article-meta">
               <time datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%B %-d, %Y" }}</time>
               {% if article.author %}by {{ article.author }}{% endif %}
@@ -35,7 +35,7 @@ title: Home
               </div>
             {% endif %}
             
-            <a href="{{ article.url | relative_url }}" class="read-more">Read Full Article →</a>
+            <a href="{{ site.baseurl }}{{ article.url }}" class="read-more">Read Full Article →</a>
           </div>
         </article>
       {% endfor %}
