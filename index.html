@@ -13,31 +13,37 @@ title: Home
   <main class="articles-grid">
     {% assign sorted_articles = site.articles | sort: 'date' | reverse %}
     
-    {% for article in sorted_articles %}
-      <article class="magazine-article">
-        {% if article.featured_image %}
-          <div class="article-image">
-            <img src="{{ article.featured_image }}" alt="{{ article.title | escape }}">
-          </div>
-        {% endif %}
-        
-        <div class="article-content">
-          <h2><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h2>
-          <p class="article-meta">
-            <time datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%B %-d, %Y" }}</time>
-            {% if article.author %}by {{ article.author }}{% endif %}
-          </p>
-          
-          {% if article.excerpt %}
-            <div class="article-excerpt">
-              {{ article.excerpt }}
+    {% if sorted_articles.size > 0 %}
+      {% for article in sorted_articles %}
+        <article class="magazine-article">
+          {% if article.featured_image %}
+            <div class="article-image">
+              <img src="{{ article.featured_image }}" alt="{{ article.title | escape }}">
             </div>
           {% endif %}
           
-          <a href="{{ article.url | relative_url }}" class="read-more">Read Full Article →</a>
-        </div>
-      </article>
-    {% endfor %}
+          <div class="article-content">
+            <h2><a href="{{ article.url | relative_url }}">{{ article.title }}</a></h2>
+            <p class="article-meta">
+              <time datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%B %-d, %Y" }}</time>
+              {% if article.author %}by {{ article.author }}{% endif %}
+            </p>
+            
+            {% if article.excerpt %}
+              <div class="article-excerpt">
+                {{ article.excerpt }}
+              </div>
+            {% endif %}
+            
+            <a href="{{ article.url | relative_url }}" class="read-more">Read Full Article →</a>
+          </div>
+        </article>
+      {% endfor %}
+    {% else %}
+      <div class="no-articles">
+        <h2>No articles yet. Check back soon!</h2>
+      </div>
+    {% endif %}
   </main>
 
   <footer class="magazine-footer">
@@ -159,6 +165,19 @@ title: Home
   padding: 30px;
   color: #7f8c8d;
   margin-top: 40px;
+}
+
+.no-articles {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+.no-articles h2 {
+  color: #7f8c8d;
+  font-size: 1.5em;
 }
 
 @media (max-width: 768px) {
