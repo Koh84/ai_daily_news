@@ -1,0 +1,116 @@
+---
+layout: default
+---
+
+<article class="single-article">
+  <div class="article-header">
+    {% if page.featured_image %}
+      <img src="{{ page.featured_image }}" alt="{{ page.title | escape }}" class="single-featured-image">
+    {% endif %}
+    
+    <h1>{{ page.title }}</h1>
+    <p class="article-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% if page.author %}by {{ page.author }}{% endif %}
+    </p>
+  </div>
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+
+  <nav class="article-nav">
+    {% assign sorted_articles = site.articles | sort: 'date' | reverse %}
+    {% for article in sorted_articles %}
+      {% if article.url == page.url %}
+        {% unless forloop.first %}
+          {% assign prev_article = previous_article %}
+          <a href="{{ prev_article.url | relative_url }}" class="prev-link">← Previous Article</a>
+        {% endunless %}
+        {% unless forloop.last %}
+          {% assign next_article = sorted_articles[forloop.index] %}
+          <a href="{{ next_article.url | relative_url }}" class="next-link">Next Article →</a>
+        {% endunless %}
+      {% endif %}
+      {% assign previous_article = article %}
+    {% endfor %}
+  </nav>
+</article>
+
+<style>
+.single-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.article-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.single-featured-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.article-header h1 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.article-meta {
+  font-size: 1em;
+  color: #7f8c8d;
+}
+
+.article-body {
+  font-size: 1.15em;
+  line-height: 1.8;
+  color: #34495e;
+  padding: 20px 0;
+}
+
+.article-body p {
+  margin-bottom: 20px;
+}
+
+.article-body h2, .article-body h3 {
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.prev-link, .next-link {
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.prev-link:hover, .next-link:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .article-header h1 { font-size: 1.8em; }
+  .single-article { padding: 15px; }
+}
+</style>

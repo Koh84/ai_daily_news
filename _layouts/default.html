@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body>
+    <div class="container">
+        {{ content }}
+    </div>
+    
+    <script>
+        // Simple script to make images responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.article-image img');
+            images.forEach(img => {
+                img.onload = function() {
+                    if (img.naturalHeight > 400) {
+                        img.style.maxHeight = '400px';
+                    }
+                };
+            });
+        });
+    </script>
+</body>
+</html>
