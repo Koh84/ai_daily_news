@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/assets/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="magazine-container">
+  <header class="magazine-header">
+    <h1>Daily Magazine</h1>
+    <p class="subtitle">Your daily curated content</p>
+    <p class="current-date">Today: April 23, 2026</p>
+  </header>
+
+  <main class="articles-grid">
+    
+    
+    
+      
+        <article class="magazine-article">
+          
+            <div class="article-image">
+              <img src="https://picsum.photos/id/180/1200/630" alt="AI Agents: The Digital Workforce Revolutionizing Our Future">
+            </div>
+          
+          
+          <div class="article-content">
+            <h2><a href="/articles/ai-agents/">AI Agents: The Digital Workforce Revolutionizing Our Future</a></h2>
+            <p class="article-meta">
+              <time datetime="2026-04-23T00:00:00+00:00">April 23, 2026</time>
+              by Editor
+            </p>
+            
+            
+              <div class="article-excerpt">
+                <p>Artificial Intelligence agents have moved far beyond simple chatbots and automated helpers. Today’s AI agents are autonomous systems that can discover data, plan, reason, and execute complex multi-step tasks to achieve specific goals with little or no human interaction.</p>
+
+              </div>
+            
+            
+            <a href="/articles/ai-agents/" class="read-more">Read Full Article →</a>
+          </div>
+        </article>
+      
+        <article class="magazine-article">
+          
+            <div class="article-image">
+              <img src="/assets/images/articles/2024-01-15/featured.jpg" alt="Welcome to Your Magazine">
+            </div>
+          
+          
+          <div class="article-content">
+            <h2><a href="/articles/welcome/">Welcome to Your Magazine</a></h2>
+            <p class="article-meta">
+              <time datetime="2024-01-15T00:00:00+00:00">January 15, 2024</time>
+              by Editor
+            </p>
+            
+            
+              <div class="article-excerpt">
+                <p>This is your first magazine article! 🎉</p>
+
+              </div>
+            
+            
+            <a href="/articles/welcome/" class="read-more">Read Full Article →</a>
+          </div>
+        </article>
+      
+    
+  </main>
+
+  <footer class="magazine-footer">
+    <p>© 2026 Daily Magazine</p>
+  </footer>
+</div>
+
+<style>
+.magazine-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.magazine-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 10px;
+}
+
+.magazine-header h1 {
+  font-size: 3em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.current-date {
+  font-style: italic;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.articles-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.magazine-article {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.magazine-article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.article-image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 30px;
+}
+
+.article-content h2 {
+  font-size: 2em;
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.article-content h2 a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.article-content h2 a:hover {
+  color: #3498db;
+}
+
+.article-meta {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.article-excerpt {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.read-more:hover {
+  background-color: #2980b9;
+}
+
+.magazine-footer {
+  text-align: center;
+  padding: 30px;
+  color: #7f8c8d;
+  margin-top: 40px;
+}
+
+.no-articles {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  margin: 40px 0;
+}
+
+.no-articles h2 {
+  color: #7f8c8d;
+  font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .magazine-header h1 { font-size: 2em; }
+  .article-content { padding: 20px; }
+}
+</style>
+
+    </div>
+    
+    <script>
+        // Simple script to make images responsive
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.article-image img');
+            images.forEach(img => {
+                img.onload = function() {
+                    if (img.naturalHeight > 400) {
+                        img.style.maxHeight = '400px';
+                    }
+                };
+            });
+        });
+    </script>
+</body>
+</html>
