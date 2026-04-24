@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Understanding Cat Fighting: Causes and Practical Solutions"
-date: 2026-04-25
+date: 2026-04-24
 author: Editor
 featured_image: https://images.unsplash.com/photo-1513466410674-3c5f96a84abb?w=1200&q=80
 ---
