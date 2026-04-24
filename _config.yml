@@ -10,11 +10,16 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Source and destination
+source: .
+destination: _site
+
 # Collections for articles
 collections:
   articles:
     output: true
     permalink: /articles/:title/
+    read_fields: true
 
 # Custom settings for magazine layout
 articles_dir: _articles
