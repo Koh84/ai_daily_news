@@ -5,7 +5,6 @@ date: 2026-04-24
 author: Tech Editor
 featured_image: https://picsum.photos/seed/841041013270/1200/630
 ---
-# The Future of Artificial Intelligence in Healthcare
 
 Explore how AI is transforming healthcare delivery, diagnostics, and patient care in this comprehensive overview.
 
