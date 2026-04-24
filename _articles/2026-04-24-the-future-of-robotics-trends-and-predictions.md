@@ -3,7 +3,7 @@ layout: article
 title: "The Future of Robotics: Trends and Predictions"
 date: 2026-04-24
 author: Editor
-featured_image: https://picsum.photos/id/20/1200/630
+featured_image: https://images.unsplash.com/photo-1587573477935-1f7d978ee69b?w=1200&q=80
 ---
 
 Robotics is rapidly transforming our world, from manufacturing floors to healthcare settings and even our homes. As we look ahead to the next decade, several key trends are shaping the future of this exciting field.
